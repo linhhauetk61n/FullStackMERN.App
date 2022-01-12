@@ -5,6 +5,7 @@ import {
     DELETE_POST,
     UPDATE_POST,
     FIND_POST,
+    RESET_POST,
 } from "../contexts/constants";
 export const postReducer = (state, action) => {
     const { type, payload } = action;
@@ -44,6 +45,13 @@ export const postReducer = (state, action) => {
             return {
                 ...state,
                 posts: newPosts,
+            };
+        case RESET_POST:
+            return {
+                ...state,
+                post: null,
+                posts: [],
+                postsLoading: true,
             };
 
         default:

@@ -8,6 +8,7 @@ import {
     DELETE_POST,
     UPDATE_POST,
     FIND_POST,
+    RESET_POST,
 } from "./constants";
 import axios from "axios";
 
@@ -19,6 +20,10 @@ const PostContextProvider = ({ children }) => {
         posts: [],
         postsLoading: true,
     });
+    //When logout reset postReducer
+    const logoutAction = () => {
+        dispatch({ type: RESET_POST });
+    };
     //Show Hide Modal Post
     const [showAddPostModal, setShowAddPostModel] = useState(false);
     const handleHide = () => setShowAddPostModel(false);
@@ -122,6 +127,7 @@ const PostContextProvider = ({ children }) => {
         deletePost,
         findPost,
         updatePost,
+        logoutAction,
     };
 
     return (

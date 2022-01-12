@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
+import { PostContext } from "../../contexts/PostContext";
 
 const NavbarMenu = () => {
     const {
@@ -14,7 +15,11 @@ const NavbarMenu = () => {
         },
         logoutUser,
     } = useContext(AuthContext);
-    const logout = () => logoutUser();
+    const { logoutAction } = useContext(PostContext);
+    const logout = () => {
+        logoutUser();
+        logoutAction();
+    };
 
     return (
         <Navbar expand="lg" bg="primary" variant="dark" className="shadow">
