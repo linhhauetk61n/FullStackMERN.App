@@ -1,0 +1,42 @@
+POST   http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "linhhauetk61n",
+    "password": "16022442"
+}
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "linhhauetk61n",
+    "password": "16022442"
+}
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhNTJlMmRiNjc3ZGJkM2E5NGU1MzEiLCJpYXQiOjE2NDE2MzkwMzd9.29cSPQvRRlEZiVQ6rs8RZ_lqMgD2ryfZQ9yJxJhoLbs
+
+{
+    "title": "Test",
+    "description": "Test",
+    "url": "reactjs.com"
+}
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhNzFjMzE0Y2MyZGQ4NDc0OWM1M2EiLCJpYXQiOjE2Mzc3NjY4NTh9.7WxiH8hQ-32s0UJ-SHHsbjL-4wSQ9n6M78XCBOJAoQI
+###
+PUT http://localhost:5000/api/posts/619e53fe38e420a3247abe1a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhNzFjMzE0Y2MyZGQ4NDc0OWM1M2EiLCJpYXQiOjE2Mzc3NjY4NTh9.7WxiH8hQ-32s0UJ-SHHsbjL-4wSQ9n6M78XCBOJAoQI
+
+{
+    "title": "Full Stack MERN APP",
+    "description": "Learning create APP with MongoDB, Express, ReactJS, NodeJS",
+    "url": "https://vuejs.org",
+    "status": "LEARNING"
+}
+###
+DELETE  http://localhost:5000/api/posts/619e53fe38e420a3247abe1a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhNzFjMzE0Y2MyZGQ4NDc0OWM1M2EiLCJpYXQiOjE2Mzc3NjY4NTh9.7WxiH8hQ-32s0UJ-SHHsbjL-4wSQ9n6M78XCBOJAoQI
